@@ -18,5 +18,4 @@ nutrition_df.index.name = 'Type'
 nutrition_df.reset_index()
 streamlit.dataframe(nutrition_df)
 
-
 streamlit.pyplot(ch.makeMacroChart(nutrients))
