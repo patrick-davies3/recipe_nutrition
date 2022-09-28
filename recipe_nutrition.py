@@ -19,3 +19,19 @@ nutrition_df.reset_index()
 streamlit.dataframe(nutrition_df)
 
 streamlit.pyplot(ch.makeMacroChart(nutrients))
+
+streamlit.title('Recipe Nutrition Calculator')
+scraper = scrape_me('https://www.budgetbytes.com/peanut-tofu/')
+ingredients_df = pd.DataFrame(scraper.ingredients())
+streamlit.dataframe(ingredients_df)
+
+
+streamlit.text(scraper.nutrients())
+streamlit.text(type(scraper.nutrients()))
+nutrients = scraper.nutrients()
+nutrition_df = pd.Series(nutrients, name ='Value')
+nutrition_df.index.name = 'Type'
+nutrition_df.reset_index()
+streamlit.dataframe(nutrition_df)
+
+streamlit.pyplot(ch.makeMacroChart(nutrients))
