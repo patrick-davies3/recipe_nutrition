@@ -9,5 +9,6 @@ streamlit.dataframe(ingredients_df)
 
 
 streamlit.text(scraper.nutrients())
+streamlit.text(type(scraper.nutrients()))
 nutrition_df = pandas.DataFrame.from_dict((scraper.nutrients()))
 streamlit.dataframe(nutrition_df)
