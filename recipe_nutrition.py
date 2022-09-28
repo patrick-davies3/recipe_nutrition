@@ -10,7 +10,7 @@ streamlit.dataframe(ingredients_df)
 
 streamlit.text(scraper.nutrients())
 streamlit.text(type(scraper.nutrients()))
-nutrition_df = pd.DataFrame.Series(scraper.nutrients(), name ='Value')
+nutrition_df = pd.Series(scraper.nutrients(), name ='Value')
 nutrition_df.index.name = 'Type'
 nutrition_df.reset_index()
 streamlit.dataframe(nutrition_df)
