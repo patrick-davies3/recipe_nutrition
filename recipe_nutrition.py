@@ -11,5 +11,5 @@ streamlit.dataframe(ingredients_df)
 streamlit.text(scraper.nutrients())
 streamlit.text(type(scraper.nutrients()))
 nutrition_df = pandas.DataFrame.from_dict(scraper.nutrients(), orient='index',
-                       columns=['Type', 'Value'])
+                       columns=['Type', 'Value']).index([0])
 streamlit.dataframe(nutrition_df)
