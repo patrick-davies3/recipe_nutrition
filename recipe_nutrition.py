@@ -16,7 +16,8 @@ nutrition_df = pd.Series(nutrients, name ='Value')
 nutrition_df.index.name = 'Type'
 nutrition_df.reset_index()
 streamlit.dataframe(nutrition_df)
-macros = [nutrients.get('carbohydrateContent'), nutrients.get('fatContent'),nutrients.get('proteinContent')]
+macros = [nutrients.get('carbohydrateContent').strip(' g'), nutrients.get('fatContent').strip(' g'), 
+            nutrients.get('proteinContent').strip(' g')]
 
 labels = 'Carbs', 'Fat', 'Protein'
 
